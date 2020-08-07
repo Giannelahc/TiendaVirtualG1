@@ -1,0 +1,5 @@
+edu\patronesdiseno\srp\models\Auto.class
+edu\patronesdiseno\srp\models\EnumState.class
+edu\patronesdiseno\srp\models\patterns\PaiddedState.class
+edu\patronesdiseno\srp\models\patterns\CompletedState.class
+edu\patronesdiseno\srp\models\patterns\NormalOrder.class
