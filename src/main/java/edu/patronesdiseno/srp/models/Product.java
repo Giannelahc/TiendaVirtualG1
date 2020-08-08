@@ -1,6 +1,7 @@
 package edu.patronesdiseno.srp.models;
 
 import edu.patronesdiseno.srp.models.patterns.HighProductFactory;
+import edu.patronesdiseno.srp.models.patterns.ProductLineEnum;
 
 public class Product {
     private String id;
@@ -8,11 +9,10 @@ public class Product {
     private Double basePrice;
     private String lineProduct;
     private String maintenance;
+    private ProductLineEnum productLine;
 
     public Product()   {
-
         HighProductFactory factoryProduct = new HighProductFactory();
-
         this.lineProduct = factoryProduct.getLineProduct().getLine();
         this.maintenance = factoryProduct.getMaintenance().getPeriod();
     }
@@ -61,5 +61,11 @@ public class Product {
         this.maintenance = maintenance;
     }
 
+    public ProductLineEnum getProductLine() {
+        return productLine;
+    }
 
+    public void setProductLine(ProductLineEnum productLine) {
+        this.productLine = productLine;
+    }
 }

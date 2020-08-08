@@ -13,4 +13,6 @@ public interface ProductController {
     void update(@NotNull Context context);
 
     void delete(@NotNull Context context);
+
+    void findAllProductsByIterator(@NotNull Context context);
 }

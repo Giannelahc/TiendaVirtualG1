@@ -52,7 +52,6 @@ public class ProductControllerImpl implements ProductController {
         if (Product == null) {
             throw new NotFoundResponse(String.format("A Product with id '%s' is not found", id));
         }
-
         context.json(Product);
 
     }
@@ -74,5 +73,9 @@ public class ProductControllerImpl implements ProductController {
         ProductRepository.update(Product, id);
 
     }
-    
+
+    @Override
+    public void findAllProductsByIterator(Context context) {
+        context.json(ProductRepository.findAll());
+    }
 }
