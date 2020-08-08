@@ -14,7 +14,7 @@ import edu.patronesdiseno.srp.models.Order;
 public class NormalOrder extends Order{
     
     private int minTrafico;
-    
+
     @Override
     public Double calculaTiempoLlegada(){
         this.minTrafico = (int) Math.floor(Math.random()*6+1);

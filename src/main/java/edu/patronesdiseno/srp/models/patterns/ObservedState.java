@@ -12,7 +12,7 @@ public class ObservedState implements CustomerState{
 
     @Override
     public void nextState() {
-        System.out.println("Debido a que se encuentra observado, no cuenta con un siguiente estado");
+        System.out.println("Se encuentra observado");
     }
 
     @Override
@@ -22,6 +22,6 @@ public class ObservedState implements CustomerState{
 
     @Override
     public void noActivity() {
-        System.out.println("Debido a que se encuentra observado, no afecta su no actividad");
+        System.out.println("Se encuentra observado");
     }
 }

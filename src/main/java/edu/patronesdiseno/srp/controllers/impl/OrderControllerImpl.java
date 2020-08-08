@@ -47,9 +47,15 @@ public class OrderControllerImpl implements OrderController {
         List<IOrderItem> items = new ArrayList<>();
         OrderItemInternet oi1 = new OrderItemInternet( "P01010034", 1, 400.90);
         OrderItemInternet oi2 = new OrderItemInternet( "P01010025", 1, 600.90);
+        ItemsCollection itemsCollection = new ConcreteItemsCollection();
+
         items.add(oi1);
         items.add(oi2);
         order.setOrderItems(items);
+
+        itemsCollection.addItem(oi1);
+        itemsCollection.addItem(oi2);
+        order.getItemsInfo(itemsCollection);
 
         DiscountFactory factoryDiscount = new DiscountFactory();
         IDiscount discount = factoryDiscount.createDiscount(DiscountFactory.DISCOUNT_COUPON);
@@ -63,7 +69,6 @@ public class OrderControllerImpl implements OrderController {
         FastOrder fOrder = new FastOrder();
         fOrder.setTransporte(moto1);
         System.out.println(fOrder.calculaTiempoLlegada());
-
 
         System.out.println("Log Status Order");
         OrderedState ordered = new OrderedState();

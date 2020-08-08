@@ -5,6 +5,8 @@ import java.util.List;
 import edu.patronesdiseno.srp.models.interfaces.IDiscount;
 import edu.patronesdiseno.srp.models.interfaces.IOrderItem;
 import edu.patronesdiseno.srp.models.interfaces.ITransporte;
+import edu.patronesdiseno.srp.models.patterns.ItemIterator;
+import edu.patronesdiseno.srp.models.patterns.ItemsCollection;
 import edu.patronesdiseno.srp.models.patterns.OrderState;
 
 public class Order {
@@ -23,6 +25,9 @@ public class Order {
     private List<IOrderItem> orderItems;
 
     private OrderState state;
+
+    public Order() {
+    }
 
     public List<IOrderItem> getOrderItems() {
         //List<IOrderItem> ordersItems = new ArrayList<>();
@@ -150,4 +155,18 @@ public class Order {
         else
             System.out.println("This order can't be completed.");
     }
+
+    public void getItemsInfo(ItemsCollection itemsCollection){
+        System.out.println("------------- INFORMACIÓN DE ITEMS DE LA ORDEN ---------------");
+        ItemIterator iterator = itemsCollection.createItemIterator();
+
+        while(iterator.hasNext()) {
+            IOrderItem product = iterator.getNext();
+            System.out.println(product.getIdProduct());
+            System.out.println(product.getPrice());
+            System.out.println(product.getQuantity());
+        }
+        System.out.println("----------------------------------------------------------------");
+    }
+
 }

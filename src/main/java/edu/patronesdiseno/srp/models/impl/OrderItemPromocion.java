@@ -3,6 +3,8 @@ package edu.patronesdiseno.srp.models.impl;
 import edu.patronesdiseno.srp.models.Order;
 import edu.patronesdiseno.srp.models.Product;
 import edu.patronesdiseno.srp.models.interfaces.IOrderItem;
+import edu.patronesdiseno.srp.models.patterns.ItemIterator;
+import edu.patronesdiseno.srp.models.patterns.ItemsCollection;
 
 public class OrderItemPromocion implements IOrderItem {
 
@@ -10,6 +12,7 @@ public class OrderItemPromocion implements IOrderItem {
     //private Product product;
     private Integer quantity;
     private Double price;
+    private ItemsCollection itemsCollection;
 
     public OrderItemPromocion(String idProduct,Integer quantity,Double price)  {
         //this.order = order;
@@ -62,8 +65,9 @@ public class OrderItemPromocion implements IOrderItem {
 
     @Override
     public String getIdProduct() {
-
         return this.idProduct;
     }
-    
+
+
+
 }

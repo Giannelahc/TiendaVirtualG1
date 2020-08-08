@@ -3,6 +3,8 @@ package edu.patronesdiseno.srp.models.impl;
 import edu.patronesdiseno.srp.models.Order;
 import edu.patronesdiseno.srp.models.Product;
 import edu.patronesdiseno.srp.models.interfaces.IOrderItem;
+import edu.patronesdiseno.srp.models.patterns.ItemIterator;
+import edu.patronesdiseno.srp.models.patterns.ItemsCollection;
 
 public class OrderItemInternet implements IOrderItem {
     //private Order order;

@@ -42,7 +42,7 @@ public class CustomerRepositoryImpl implements CustomerRepository {
 
     @Override
     public Customer find(String id) {
-        //System.out.println("_id: " + id);
+        System.out.println("_id: " + id);
         return customers.find(eq("_id", id)).first();
     }
 
