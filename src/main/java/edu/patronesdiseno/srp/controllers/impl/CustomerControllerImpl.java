@@ -4,6 +4,8 @@ import edu.patronesdiseno.srp.config.Paths;
 //import edu.patronesdiseno.srp.config.Paths;
 import edu.patronesdiseno.srp.controllers.CustomerController;
 import edu.patronesdiseno.srp.models.Customer;
+import edu.patronesdiseno.srp.models.patterns.ActiveState;
+import edu.patronesdiseno.srp.models.patterns.CustomerState;
 import edu.patronesdiseno.srp.repositories.CustomerRepository;
 import io.javalin.http.Context;
 import io.javalin.http.BadRequestResponse;
@@ -27,6 +29,10 @@ public class CustomerControllerImpl implements CustomerController {
 
         Customer customer = context.bodyAsClass(Customer.class);
         System.out.println("Cliente: " + customer);
+
+        System.out.println("Customer state");
+        CustomerState state = new ActiveState(customer);
+        customer.setState(state);
 
         //if (customer.getId() != null) {
         //    throw new BadRequestResponse(String.format("Unable to create a new post with existing id: %s", customer));
